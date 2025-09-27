@@ -1,5 +1,6 @@
 import streamlit as st
-
+import utils.auth as auth
+import pages as pages
 
 st.set_page_config(page_title="Women's Health", page_icon="🌸", layout="centered")
 
@@ -33,7 +34,7 @@ with st.form("login"):
     submitted  = st.form_submit_button("Sign in")
 
 if submitted:
-    user = verify_login(student_id.strip(), password.strip(), expected_role=role)
+    user = auth.verify_login(student_id.strip(), password.strip(), role)
     if user:
         st.session_state.user = user
         st.success(f"Welcome, {user['name']}! Redirecting…")

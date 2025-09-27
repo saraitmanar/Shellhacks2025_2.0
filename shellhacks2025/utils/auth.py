@@ -14,7 +14,7 @@ def find_user(user_id: str) -> Optional[Dict]:
             return u
     return None
 
-def verify_login(user_id: str, password: str) -> Optional[Dict]:
+def verify_login(user_id: str, password: str, role: str) -> Optional[Dict]:
     u = find_user(user_id)
     if not u: return None
     if u["password"] != password: return None
