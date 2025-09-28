@@ -56,9 +56,9 @@ if st.session_state.user:
     st.divider()
     st.write(f"You're signed in as **{u['name']}** ({u['role']}).")
     if u["role"] == "student":
-        st.page_link("pages/1_Student.py", label="Go to Student page ➜")
+        st.page_link("pages/Chat.py", label="Go to Student page ➜")
     else:
-        st.page_link("pages/2_Admin.py", label="Go to Admin dashboard ➜")
+        st.page_link("pages/Admin.py", label="Go to Admin dashboard ➜")
     if st.button("Sign out"):
         st.session_state.user = None
         st.experimental_rerun()
